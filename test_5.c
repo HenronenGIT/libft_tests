@@ -194,51 +194,48 @@ void	test_5()
 	printf(RESET);
 	int		fd;
 
-	fd = open("putchar_fd", O_RDWR | O_CREAT, 0666);
+	fd = open("putchar_fd", O_RDWR | O_CREAT | O_EXCL, 0644);
 	if (fd == -1)
 	{
 		printf("open() error!\n");
-		return ;
 	}
-	ft_putchar_fd('H', fd);
-	close(fd);
 
 	/*	putstr_fd	*/
-	printf("%sFT_PUTSTR_FD TESTS\n", GREEN);
-	printf(RESET);
+	//printf("%sFT_PUTCHAR_FD TESTS\n", GREEN);
+	//printf(RESET);
 	
-	int	fd2;
-	fd2 = open("putstr_fd", O_RDWR | O_CREAT, 0666);
-	if (fd2 == -1)
-	{
-		printf("open() error!\n");
-		return (0);
-	}
-	ft_putstr_fd("Hello world", fd2);
-	close(fd2);
-
-	/*	putendl_fd	*/
-	printf("%sFT_PUTENDL_FD TESTS\n", GREEN);
-	printf(RESET);
-
-	int	fd3;
-	fd3 = open("putendl_fd", O_RDWR | O_CREAT, 0666);
-	if (fd3 == -1)
-	{
-		printf("open() error!\n");
-		return (0);
-	}
-	ft_putendl_fd("This is Marvin");
-	close(fd3);
-
-	///*	putnbr_fd	*/
-	//fd = open("fd", O_RDWR | O_CREAT, 0666);
-	//if (fd == -1)
+	//int	fd2;
+	//fd2 = open("putchar_fd", O_RDWR | O_CREAT | O_EXCL, 0644);
+	//if (fd2 == -1)
 	//{
 	//	printf("open() error!\n");
 	//	return (0);
 	//}
-	//ft_putnbr_fd(42, fd);
-	//close(fd);
-}
+	//ft_putstr_fd("Hello world", fd2);
+	//close(fd2);
 
+	///*	putendl_fd	*/
+	//printf("%sFT_PUTENDL_FD TESTS\n", GREEN);
+	//printf(RESET);
+
+	//int	fd3;
+	//fd3 = open("putendl_fd", O_RDWR | O_CREAT, 0666);
+	//if (fd3 == -1)
+	//{
+	//	printf("open() error!\n");
+	//	return (0);
+	//}
+	//ft_putendl_fd("This is Marvin");
+	//close(fd3);
+
+	///*	putnbr_fd	*/
+	//int	fd4;
+	//fd4 = open("fd", O_RDWR | O_CREAT, 0666);
+	//if (fd4 == -1)
+	//{
+	//	printf("open() error!\n");
+	//	return (0);
+	//}
+	//ft_putnbr_fd(42, fd4);
+	//close(fd4);
+}

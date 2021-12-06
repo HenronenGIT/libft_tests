@@ -21,7 +21,7 @@
  *	atoi
  *	memccpy
  *	strnstr
- *	strncmo
+ *	strncmp
  *	strncpy
  *	strncat
  */

@@ -49,4 +49,5 @@ int	main(void)
 
 	t_list	*new_list;
 	new_list = ft_lstmap(list, f);
+	ft_print_list(new_list);
 }

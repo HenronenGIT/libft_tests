@@ -193,47 +193,52 @@ void	test_5()
 	printf("%sFT_PUTCHAR_FD TESTS\n", GREEN);
 	printf(RESET);
 	int		fd;
-	char	buf[3];
 
-	i = 0;
-	fd = open("ft_putchar_ft_file.txt", O_WRONLY | O_APPEND | O_CREAT);
+	fd = open("putchar_fd", O_RDWR | O_CREAT, 0666);
 	if (fd == -1)
 	{
 		printf("open() error!\n");
 		return ;
 	}
 	ft_putchar_fd('H', fd);
-
-	int ret_put = read(fd, buf, 3);
-	buf[ret_put] = '\0';
-	printf("%s\n", buf);
 	close(fd);
 
 	/*	putstr_fd	*/
-	//int		fd;
-
-	//fd = open("test", O_WRONLY);
-	//if (fd == -1)
-	//{
-	//	printf("open() error!\n");
-	//	return (0);
-	//}
-	//ft_putstr_fd("Hello world", fd);
+	printf("%sFT_PUTSTR_FD TESTS\n", GREEN);
+	printf(RESET);
 	
+	int	fd2;
+	fd2 = open("putstr_fd", O_RDWR | O_CREAT, 0666);
+	if (fd2 == -1)
+	{
+		printf("open() error!\n");
+		return (0);
+	}
+	ft_putstr_fd("Hello world", fd2);
+	close(fd2);
+
 	/*	putendl_fd	*/
-	//ft_putendl("Hello World!");
-	
-	/*	putnbr_fd	*/
+	printf("%sFT_PUTENDL_FD TESTS\n", GREEN);
+	printf(RESET);
 
-	//fd = open("test", O_WRONLY | O_CREAT);
+	int	fd3;
+	fd3 = open("putendl_fd", O_RDWR | O_CREAT, 0666);
+	if (fd3 == -1)
+	{
+		printf("open() error!\n");
+		return (0);
+	}
+	ft_putendl_fd("This is Marvin");
+	close(fd3);
+
+	///*	putnbr_fd	*/
+	//fd = open("fd", O_RDWR | O_CREAT, 0666);
 	//if (fd == -1)
 	//{
 	//	printf("open() error!\n");
 	//	return (0);
 	//}
 	//ft_putnbr_fd(42, fd);
+	//close(fd);
 }
 
-
-
-}

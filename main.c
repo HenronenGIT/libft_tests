@@ -21,15 +21,26 @@ void	test_5();
 void	test_6();
 void	test_7();
 
-int	main(void)
+int	main(int ac, char **argv)
 {
-	//test_1();
-	//test_2();
-	//test_3();
-	//test_4();
-	//test_5();
+	if (ac != 2)
+		return (0);
+	if (*argv[1] == '1')
+		test_1();
+	if (*argv[1] == '2')
+		test_2();
+	if (*argv[1] == '3')
+		test_3();
+	if (*argv[1] == '4')
+		test_4();
+	if (*argv[1] == '5')
+		test_5();
 	/*	Additional functions 2 */
-	//test_6();
+	if (*argv[1] == '6')
+		test_6();
 	/*	Bonus ones	*/
-	test_7();
+	if (*argv[1] == '7')
+		test_7();
+	else
+		return (0);
 }

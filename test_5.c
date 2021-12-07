@@ -194,48 +194,57 @@ void	test_5()
 	printf(RESET);
 	int		fd;
 
-	fd = open("putchar_fd", O_RDWR | O_CREAT | O_EXCL, 0644);
+	fd = open("putchar_fd", O_RDWR | O_APPEND, 0644);
 	if (fd == -1)
-	{
 		printf("open() error!\n");
+	else
+	{
+		ft_putchar_fd('H', fd);
+		printf("Text written to 'putchar_fd' file\n");
 	}
+	ft_putchar_fd('\n', fd);
+	close(fd);
 
 	/*	putstr_fd	*/
-	//printf("%sFT_PUTCHAR_FD TESTS\n", GREEN);
-	//printf(RESET);
+	printf("%sFT_PUTSTR_FD TESTS\n", GREEN);
+	printf(RESET);
 	
-	//int	fd2;
-	//fd2 = open("putchar_fd", O_RDWR | O_CREAT | O_EXCL, 0644);
-	//if (fd2 == -1)
-	//{
-	//	printf("open() error!\n");
-	//	return (0);
-	//}
-	//ft_putstr_fd("Hello world", fd2);
-	//close(fd2);
+	fd = open("putchar_fd", O_RDWR | O_APPEND , 0644);
+	if (fd == -1)
+		printf("open() error!\n");
+	else
+	{
+		ft_putstr_fd("Hello world", fd);
+		printf("Text written to 'putchar_fd' file\n");
+	}
+	ft_putchar_fd('\n', fd);
+	close(fd);
 
-	///*	putendl_fd	*/
-	//printf("%sFT_PUTENDL_FD TESTS\n", GREEN);
-	//printf(RESET);
+	/*	putendl_fd	*/
+	printf("%sFT_PUTENDL_FD TESTS\n", GREEN);
+	printf(RESET);
 
-	//int	fd3;
-	//fd3 = open("putendl_fd", O_RDWR | O_CREAT, 0666);
-	//if (fd3 == -1)
-	//{
-	//	printf("open() error!\n");
-	//	return (0);
-	//}
-	//ft_putendl_fd("This is Marvin");
-	//close(fd3);
+	fd = open("putchar_fd", O_RDWR | O_APPEND , 0644);
+	if (fd == -1)
+		printf("open() error!\n");
+	else
+	{
+		ft_putendl_fd("This is Marvin", fd);
+		printf("Text written to 'putchar_fd' file\n");
+	}
+	close(fd);
 
-	///*	putnbr_fd	*/
-	//int	fd4;
-	//fd4 = open("fd", O_RDWR | O_CREAT, 0666);
-	//if (fd4 == -1)
-	//{
-	//	printf("open() error!\n");
-	//	return (0);
-	//}
-	//ft_putnbr_fd(42, fd4);
-	//close(fd4);
+	/*	putnbr_fd	*/
+	printf("%sFT_PUTNBR_FD TESTS\n", GREEN);
+	printf(RESET);
+	fd = open("putchar_fd", O_RDWR | O_APPEND , 0644);
+	if (fd == -1)
+		printf("open() error!\n");
+	else
+	{
+		ft_putnbr_fd(42, fd);
+		printf("Text written to 'putchar_fd' file\n");
+	}
+	ft_putchar_fd('\n', fd);
+	close(fd);
 }

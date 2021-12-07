@@ -194,7 +194,7 @@ void	test_5()
 	printf(RESET);
 	int		fd;
 
-	fd = open("putchar_fd", O_RDWR | O_APPEND, 0644);
+	fd = open("put_fd", O_RDWR | O_APPEND, 0644);
 	if (fd == -1)
 		printf("open() error!\n");
 	else
@@ -209,7 +209,7 @@ void	test_5()
 	printf("%sFT_PUTSTR_FD TESTS\n", GREEN);
 	printf(RESET);
 	
-	fd = open("putchar_fd", O_RDWR | O_APPEND , 0644);
+	fd = open("put_fd", O_RDWR | O_APPEND , 0644);
 	if (fd == -1)
 		printf("open() error!\n");
 	else
@@ -224,7 +224,7 @@ void	test_5()
 	printf("%sFT_PUTENDL_FD TESTS\n", GREEN);
 	printf(RESET);
 
-	fd = open("putchar_fd", O_RDWR | O_APPEND , 0644);
+	fd = open("put_fd", O_RDWR | O_APPEND , 0644);
 	if (fd == -1)
 		printf("open() error!\n");
 	else
@@ -237,7 +237,7 @@ void	test_5()
 	/*	putnbr_fd	*/
 	printf("%sFT_PUTNBR_FD TESTS\n", GREEN);
 	printf(RESET);
-	fd = open("putchar_fd", O_RDWR | O_APPEND , 0644);
+	fd = open("put_fd", O_RDWR | O_APPEND , 0644);
 	if (fd == -1)
 		printf("open() error!\n");
 	else

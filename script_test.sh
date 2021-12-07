@@ -1,1 +1,1 @@
-gcc -Wall -Wextra -Werror ../ekantane/libft.a ../ekantane/*.c ./test_* ./main.c 
+gcc -Wall -Wextra  -I ../bkandemi/libft.h ../bkandemi/libft.a ../bkandemi/*.c ./test_* ./main.c

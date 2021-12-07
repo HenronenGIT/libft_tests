@@ -13,10 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
-
-#define	RED "\x1B[31m"
-#define	GREEN "\x1B[32m"
-#define	RESET "\x1B[0m"
+#include "colors.h"
 
 /*	Test file for functions: 
  *	toupper

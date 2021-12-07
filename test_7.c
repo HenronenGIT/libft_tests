@@ -84,7 +84,7 @@ void	test_7()
 	printf("1st NODE:\n%s\n", list4->content);
 	printf("2nd NODE:\n%s\n\n", list4->next->content);
 	printf("Print whole list:\n");
-	ft_print_list(list4);
+	//ft_print_list(list4);
 	printf("\n");
 
 	/*	lstdelone	*/
@@ -100,7 +100,7 @@ void	test_7()
 	ss1 = "Hello!";
 	li1 = ft_lstnew(ss1, ft_strlen((char *)ss1 + 1));
 	printf("Node before lstdelone():\n");
-	ft_print_list(li1);
+	//ft_print_list(li1);
 	ft_lstdelone(&li1, del);
 	printf("Node after lstdelone():\n");
 	ft_print_list(li1);

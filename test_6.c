@@ -26,6 +26,63 @@
  *	itoa
  */
 
+size_t  ft_word_count(const char *s, char c)
+{
+        size_t  i;
+        int		is_word;
+        size_t  word_count;
+
+        i = 0;
+        word_count = 0;
+        is_word = 0;
+        while (s[i] != 0)
+        {
+                if (s[i] != c && is_word == 0)
+                {
+                        is_word = 1;
+                        word_count++;
+                }
+                if (s[i] == c)
+                        is_word = 0;
+                i++;
+        }
+        return (word_count);
+}
+
+void    ft_print_array(char **arr, const char *s, char c)
+{
+        size_t  i;
+        size_t  word_count;
+
+        word_count = ft_word_count(s, c);
+        i = 0;
+        while (i <= word_count)
+        {
+                ft_putstr(arr[i]);
+                ft_putchar('\n');
+                i++;
+        }
+        ft_putchar('\n');
+}
+
+void    ft_print_list(t_list *list)
+{
+        while (list)
+        {
+                ft_putstr(list->content);
+                list = list->next;
+                ft_putchar('\n');
+        }
+}
+
+void    ft_lcase(char *s)
+{
+        if (*s >= 'A' && *s <= 'Z')
+        {
+                *s = *s + 32;
+        }
+}
+
 static char	ft_lcase_map(char c)
 {
 	if (c >= 'A' && c <= 'Z')
@@ -81,7 +138,6 @@ void	test_6()
 	const char	*str;
 	char	s[50];
 	void	(*f)(char *);
-	void	(*f2);
 
 	/*Making string what needs to be iterated*/
 	str = "HELLO WorLd!";
@@ -97,10 +153,11 @@ void	test_6()
 	printf(RESET);
 	printf("\n%s\n\n", s);
 	/*Poiners are null test.*/
-	printf("%sSending NULL pointer\n", GREEN);
-	printf(RESET);
-	f2 = NULL;
-	ft_striter(NULL,f2);
+	//void	(*f2);
+	//printf("%sSending NULL pointer\n", GREEN);
+	//printf(RESET);
+	//f2 = NULL;
+	//ft_striter(NULL,f2);
 	printf("\n");
 
 	/*	striteri	*/
@@ -118,9 +175,10 @@ void	test_6()
 	printf(RESET);
 	ft_striteri(s3, f3);
 	printf("%s\n", s3);
-	printf("%sSending NULL pointers\n", GREEN);
-	printf(RESET);
-	ft_striteri(NULL,NULL);
+	/*	NULL TEST	*/
+	//printf("%sSending NULL pointers\n", GREEN);
+	//printf(RESET);
+	//ft_striteri(NULL,NULL);
 	printf("\n");
 
 	/*	strmap	*/
@@ -138,8 +196,8 @@ void	test_6()
 	printf("Before strmap():\nHELLO woRLD!\n");
 	printf("After strmap():\n%s\n\n", ft_strmap(s1, f4));
 
-	printf("Sending NULL:\n%s\n", ft_strmap(s2, f4));
-	printf("\n");
+	//printf("Sending NULL:\n%s\n", ft_strmap(s2, f4));
+	//printf("\n");
 
 	/*	strmapi	*/
 	printf("%sFT_STRMAP(I) TESTS\n", GREEN);
@@ -155,7 +213,7 @@ void	test_6()
 	printf("Before strmap(I):\n%s\n", str1);
 	printf("After strmap(I):\n%s\n\n",ft_strmapi(str1, f5));
 
-	printf("Sending NULL pointer:\n%s\n", ft_strmapi(str2, f5));
+	//printf("Sending NULL pointer:\n%s\n", ft_strmapi(str2, f5));
 
 	/*	strstrim	*/
 	printf("%sFT_STRTRIM TESTS\n", GREEN);
@@ -193,7 +251,14 @@ void	test_6()
 	printf("Before strsplit():\n%s\n\n", sss1);
 	arr1 = ft_strsplit(sss1, c);
 	printf("After strsplit:\n");
-	ft_print_array(arr1, sss1, c);
+	//ft_print_array(arr1, sss1, c);
+	i = 0;
+	while (arr1[i] != 0)
+	{
+		printf("%s\n", arr1[i]);
+		i++;
+	}
+	printf("\n");
 
 	c = '*';
 	char const *sss2 = "******Hello*";
@@ -201,24 +266,42 @@ void	test_6()
 	printf("Before strsplit():\n%s\n\n", sss2);
 	arr2 = ft_strsplit(sss2, c);
 	printf("After:\n");
-	ft_print_array(arr2, sss2, c);
-
+	//ft_print_array(arr2, sss2, c);
+	i = 0;
+	while (arr2[i] != 0)
+	{
+		printf("%s\n", arr2[i]);
+		i++;
+	}
+	printf("\n");
 	c = ' ';
 	char const *sss3 = "    Good    day    Hivers   ";
 	char		**arr3;
 	printf("Before strsplit():\n|%s|\n\n", sss3);
 	arr3 = ft_strsplit(sss3, c);
 	printf("After:\n");
-	ft_print_array(arr3, sss3, c);
-
+	//ft_print_array(arr3, sss3, c);
+	i = 0;
+	while (arr3[i] != 0)
+	{
+		printf("%s\n", arr3[i]);
+		i++;
+	}
+	printf("\n");
 	c = ' ';
 	char const *sss4 = "      This      is  maRVIN  !       ";
 	char		**arr4;
 	printf("Before strsplit():\n|%s|\n\n", sss4);
 	arr4 = ft_strsplit(sss4, c);
 	printf("After:\n");
-	ft_print_array(arr4, sss4, c);
-
+	//ft_print_array(arr4, sss4, c);
+	i = 0;
+	while (arr4[i] != 0)
+	{
+		printf("%s\n", arr4[i]);
+		i++;
+	}	
+	printf("\n");
 	/*	ft_itoa	*/
 	printf("%sFT_ITOA TESTS\n", GREEN);
 	printf(RESET);

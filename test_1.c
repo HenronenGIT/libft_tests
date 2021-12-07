@@ -15,7 +15,16 @@
 #include <ctype.h>
 #include "colors.h"
 
-/* test file for function strlen, isalpha, isdigit, isalnum, isascii and
+/* test file for functions:
+ *	strlen
+ *	isalpha
+ *	isdigit
+ *	isalnum
+ *	isascii
+ *	isprint
+ */	
+
+
  * isprint */
 
 void	test_1()

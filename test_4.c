@@ -100,6 +100,8 @@ void	test_4()
 	printf("%d\n\n",ft_atoi("   "));
 	printf("%d\n",atoi("10-22"));
 	printf("%d\n\n",ft_atoi("10-22"));
+	printf("%d\n",atoi("1-2"));
+	printf("%d\n\n",ft_atoi("1-2"));
 	printf("%d\n",atoi("69p0"));
 	printf("%d\n\n",ft_atoi("69p0"));
 	printf("%d\n",atoi("+-12"));
@@ -239,7 +241,6 @@ void	test_4()
 	printf("%sFT_STRNCAT\n", GREEN);
 	printf(RESET);
 
-	const char	*src4;
 
 	src2 = "lorem ipsum";
 	char		dest1[50] = "Hello ";
@@ -247,10 +248,11 @@ void	test_4()
 	printf("|%s|\n",strncat(dest1, "", 3));
 	printf("|%s|\n\n",ft_strncat(dest2, "", 3));
 
-	char		dest3[20];
-	char		dest4[20];
-	printf("|%s|\n",strncat(dest3, src4, 0));
-	printf("|%s|\n\n",ft_strncat(dest4, src4, 0));
+	//char		dest3[20];
+	//char		dest4[20];
+	//const char	*src4;
+	//printf("|%s|\n",strncat(dest3, src4, 0));
+	//printf("|%s|\n\n",ft_strncat(dest4, src4, 0));
 
 	char	dest5[15] = "a";
 	char	dest6[15] = "a";

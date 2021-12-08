@@ -117,6 +117,7 @@ void	test_2()
 
 	printf("Before ft_bzero:\n|%s|\n", str5);
 	ft_bzero(str5, ft_strlen(str5));
-	printf("After:\n|%s|\n", str5);
+	printf("After:\n|%s|\n\n", str5);
+	return ;
 
 }

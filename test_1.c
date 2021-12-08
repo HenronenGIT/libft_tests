@@ -15,8 +15,14 @@
 #include <ctype.h>
 #include "colors.h"
 
-/* test file for function strlen, isalpha, isdigit, isalnum, isascii and
- * isprint */
+/* test file for functions:
+ *	strlen
+ *	isalpha
+ *	isdigit
+ *	isalnum
+ *	isascii
+ *	isprint
+ */
 
 void	test_1()
 {
@@ -52,7 +58,7 @@ void	test_1()
 	printf("%d\n", isalpha('Z'));
 	printf("%d\n\n", ft_isalpha('Z'));
 
-	printf("%d\n\n", isalpha('a'));
+	printf("%d\n", isalpha('a'));
 	printf("%d\n\n", ft_isalpha('a'));
 
 	printf("%d\n", isalpha(')'));
@@ -99,7 +105,7 @@ void	test_1()
 	printf("%d\n", isascii('#'));
 	printf("%d\n\n", ft_isascii('#'));
 	
-	/* isprintf */
+	/* isprint */
 	printf("%sFT_ISPRINT TESTS\n", GREEN);
 	printf(RESET);
 
@@ -108,4 +114,6 @@ void	test_1()
 
 	printf("%d\n", isprint('\n'));
 	printf("%d\n\n", ft_isprint('\n'));
+	
+	return ;
 }

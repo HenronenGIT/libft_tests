@@ -51,6 +51,9 @@ int	main(void)
 	printf("%d\n",atoi("10-22"));
 	printf("%d\n\n",ft_atoi("10-22"));
 
+	printf("%d\n",atoi("1-2"));
+	printf("%d\n\n",ft_atoi("1-2"));
+
 	printf("%d\n",atoi("69p0"));
 	printf("%d\n\n",ft_atoi("69p0"));
 

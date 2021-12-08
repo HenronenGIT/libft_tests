@@ -54,24 +54,26 @@ void	test_5()
 		printf("%d", ((char *)ret)[i]);
 		i++;
 	}
-	printf("\n");
+	printf("\n\n");
 
 	/*	putchar	*/
 	printf("FT_PUTCHAR TESTS\n");
-
 	ft_putchar('H');
-	ft_putchar('\n');
-	
+	printf("\n\n");
+
 	/*	putstr	*/
-	printf("FT_PUTSTR TESTS\n");
+	printf("%sFT_PUTSTR TESTS\n", GREEN);
+	printf(RESET);
+	ft_putstr(RESET);
 	ft_putstr("Hello world!");
-	printf("\n");
+	printf("\n\n");
 
 	/*	putendl	*/
 	printf("%sFT_PUTENDL TESTS\n", GREEN);
 	printf(RESET);
+	ft_putstr(RESET);
 	ft_putendl("Hello World!");
-	printf("Should be new line");
+	printf("This sould start from new line!");
 	printf("\n");
 
 	/*	ft_putnbr	*/
@@ -104,7 +106,7 @@ void	test_5()
 
 	printf("%c\n", rt[5]);
 	/*	strdel	*/
-	printf("%sFT_STRNEW TESTS\n", GREEN);
+	printf("%sFT_STRDEL TESTS\n", GREEN);
 	printf(RESET);
 	char	*ret2;
 
@@ -125,18 +127,19 @@ void	test_5()
 	printf("|%s|\n", str);
 	ft_strclr(str);
 	printf("|%s|\n", str);
-	ft_strclr(str2);
+	//char	*str2;
+	//ft_strclr(str2);
 	
 	/*	strequ	*/
 	printf("%sFT_STREQU TESTS\n", GREEN);
 	printf(RESET);
-	const char	*str1;
-	const char	*str3;
-	str1 = NULL;
-	str2 = NULL;
 
-	printf("Should be 0\n");
-	printf("%d\n\n", ft_strequ(str1, str3));
+	//str1 = NULL;
+	//str2 = NULL;
+	//const char	*str1;
+	//const char	*str3;
+	//printf("Should be 0\n");
+	//printf("%d\n\n", ft_strequ(str1, str3));
 	printf("Should be 1\n");
 	printf("%d\n\n", ft_strequ("abcd", "abcd"));
 	printf("Should be 0\n");
@@ -158,14 +161,14 @@ void	test_5()
 	printf("Expected |1|\n%d\n\n",ft_strnequ("abcd", "abCd", 2));
 	printf("Expected |1|\n%d\n\n",ft_strnequ("", "", 2));
 	printf("Expected |0|\n%d\n\n",ft_strnequ("Abcd", "abCd", 2));
-	printf("Expected |1|\n%d\n\n",ft_strnequ(NULL, NULL, 2));
+	//printf("Expected |1|\n%d\n\n",ft_strnequ(NULL, NULL, 2));
 
 	/*	strsub	*/
 	printf("%sFT_STRSUB TESTS\n", GREEN);
 	printf(RESET);
 
-	printf("Expected:(null)\n");
-	printf("Result:%s\n\n", ft_strsub(NULL, 0, 10));
+	//printf("Expected:(null)\n");
+	//printf("Result:%s\n\n", ft_strsub(NULL, 0, 10));
 	printf("Expected:0123456789\n");
 	printf("Result:%s\n\n", ft_strsub("0123456789", 0, 10));
 	printf("Expected:6789\n");
@@ -178,8 +181,8 @@ void	test_5()
 	printf("%sFT_STRJOIN TESTS\n", GREEN);
 	printf(RESET);
 
-	printf("Expected:(null)\n");
-	printf("|%s|\n\n", ft_strjoin(NULL, NULL));
+	//printf("Expected:(null)\n");
+	//printf("|%s|\n\n", ft_strjoin(NULL, NULL));
 	printf("Expected:|Helloworld|\n");
 	printf("|%s|\n\n", ft_strjoin("Hello", "world"));
 	printf("Expected:||\n");

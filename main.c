@@ -35,12 +35,9 @@ int	main(int ac, char **argv)
 		test_4();
 	if (*argv[1] == '5')
 		test_5();
-	/*	Additional functions 2 */
 	if (*argv[1] == '6')
 		test_6();
-	/*	Bonus ones	*/
 	if (*argv[1] == '7')
 		test_7();
-	else
-		return (0);
+	return (0);
 }

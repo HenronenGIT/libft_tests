@@ -70,6 +70,7 @@ void	test_7()
 	s2 = NULL;
 	printf("String 2 content:\n%s\n", s2);
 	list2 = ft_lstnew(s2, 5);
+	printf("Node 2 content_size:\n%zu", list2->content_size);
 	printf("Node 2 content:\n%s\n\n", list2->content);
 	/* Sending content, but size is 0 */
 	printf("String content but content_size set to 0:\n|%s|\n",s1); 
@@ -94,9 +95,12 @@ void	test_7()
 	printf("1st NODE:\n%s\n", list4->content);
 	printf("2nd NODE:\n%s\n\n", list4->next->content);
 	printf("Print whole list:\n");
-	ft_print_list(list4);
-	//printf("%s\n", list4->content);
-	//printf("%s\n", list4->next->content);
+	while (list4)
+	{
+        printf("%s\n", list4->content);
+        list4 = list4->next;
+        printf("\n");
+    }
 	printf("\n");
 
 	/*	lstdelone	*/
@@ -112,10 +116,15 @@ void	test_7()
 	ss1 = "Hello!";
 	li1 = ft_lstnew(ss1, ft_strlen((char *)ss1 + 1));
 	printf("Node before lstdelone():\n");
-	ft_print_list(li1);
+    printf("%s\n", li1->content);
 	ft_lstdelone(&li1, del);
 	printf("Node after lstdelone():\n");
-	ft_print_list(li1);
+	if (!li1)
+	{
+		printf(" [OK] l1 dont exists");
+	}
+	else
+		printf("Something went wrong.");
 	printf("\n");
 
 	/*	LSTDEL	*/

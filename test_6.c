@@ -65,15 +65,6 @@ void    ft_print_array(char **arr, const char *s, char c)
         ft_putchar('\n');
 }
 
-void    ft_print_list(t_list *list)
-{
-        while (list)
-        {
-                ft_putstr(list->content);
-                list = list->next;
-                ft_putchar('\n');
-        }
-}
 
 void    ft_lcase(char *s)
 {
@@ -251,7 +242,6 @@ void	test_6()
 	printf("Before strsplit():\n%s\n\n", sss1);
 	arr1 = ft_strsplit(sss1, c);
 	printf("After strsplit:\n");
-	//ft_print_array(arr1, sss1, c);
 	i = 0;
 	while (arr1[i] != 0)
 	{
@@ -266,7 +256,6 @@ void	test_6()
 	printf("Before strsplit():\n%s\n\n", sss2);
 	arr2 = ft_strsplit(sss2, c);
 	printf("After:\n");
-	//ft_print_array(arr2, sss2, c);
 	i = 0;
 	while (arr2[i] != 0)
 	{
@@ -280,7 +269,6 @@ void	test_6()
 	printf("Before strsplit():\n|%s|\n\n", sss3);
 	arr3 = ft_strsplit(sss3, c);
 	printf("After:\n");
-	//ft_print_array(arr3, sss3, c);
 	i = 0;
 	while (arr3[i] != 0)
 	{
@@ -294,7 +282,6 @@ void	test_6()
 	printf("Before strsplit():\n|%s|\n\n", sss4);
 	arr4 = ft_strsplit(sss4, c);
 	printf("After:\n");
-	//ft_print_array(arr4, sss4, c);
 	i = 0;
 	while (arr4[i] != 0)
 	{
@@ -302,6 +289,7 @@ void	test_6()
 		i++;
 	}	
 	printf("\n");
+
 	/*	ft_itoa	*/
 	printf("%sFT_ITOA TESTS\n", GREEN);
 	printf(RESET);

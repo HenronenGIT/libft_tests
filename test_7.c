@@ -56,26 +56,44 @@ void	test_7()
 	/*	lstnew	*/
 	printf("%sFT_LSTNEW TESTS\n", GREEN);
 	printf(RESET);
-	t_list	*list;
-	t_list	*list2;
-	t_list	*list3;
 	/* Normal char test */
 	const char *s1;
+	t_list	*list;
+
 	s1 = "Hello";
 	list = ft_lstnew(s1, ft_strlen((char *)s1));
-	printf("String content:\n%s\n",s1); 
-	printf("Node 1 content:\n%s\n\n", list->content);
+	if (ft_strcmp(list->content, s1) == 0 && list->content_size) ///HERE
+		printf("[OK]\n");
+	else
+		printf("[FAIL]");
+
 	/* Content is null, but still sending content size */
 	const char *s2;
+	t_list	*list2;
+
 	s2 = NULL;
-	printf("String 2 content:\n%s\n", s2);
 	list2 = ft_lstnew(s2, 5);
-	printf("Node 2 content_size:\n%zu", list2->content_size);
-	printf("Node 2 content:\n%s\n\n", list2->content);
+	if (!list2->content && list2->content_size == 0)
+		printf("[OK]\n");
+	else
+	{
+		printf("[FAIL]\n");
+		printf("%zu\n", list2->content_size);
+	}
 	/* Sending content, but size is 0 */
-	printf("String content but content_size set to 0:\n|%s|\n",s1); 
+	t_list	*list3;
 	list3 = ft_lstnew(s1, 0);
-	printf("|%s|\n", list3->content);
+	if (list3->content_size == 0)
+	{
+		printf("[OK]\n");
+		printf("|%s|\n", list3->content);
+	}
+	else
+	{
+		printf("[FAIL]\n");
+		printf("%zu\n", list3->content_size);
+		printf("|%p|\n", list3->content);
+	}
 	free(list);
 	free(list2);
 	free(list3);
@@ -99,7 +117,6 @@ void	test_7()
 	{
         printf("%s\n", list4->content);
         list4 = list4->next;
-        printf("\n");
     }
 	printf("\n");
 
@@ -121,7 +138,7 @@ void	test_7()
 	printf("Node after lstdelone():\n");
 	if (!li1)
 	{
-		printf(" [OK] l1 dont exists");
+		printf("[OK]\n");
 	}
 	else
 		printf("Something went wrong.");

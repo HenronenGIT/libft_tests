@@ -31,11 +31,12 @@ void	test_1()
 	char	str1[] = "";
 	char	str2[] = "Hello world!";
 	size_t	len;
-
+	size_t	len2;
 
 	printf("%sFT_STRLEN TESTS\n", GREEN);
 	printf(RESET);
-	
+
+	ft_strlen(str) ? strlen(str) : printf("FAIL");
 	printf("Real deal: %zu\n",(len = strlen(str)));
 	printf("FT: %zu\n",(len = ft_strlen(str)));
 

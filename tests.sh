@@ -1,1 +1,1 @@
-gcc -Wall -Wextra -Werror -I../akoykka/ ../akoykka/libft.a ../akoykka/*.c ./test_* ./main.c
+gcc -Wall -Wextra  -I../libft/ ../libft/libft.a ../libft/*.c ./test_* ./main.c

@@ -65,7 +65,6 @@ void    ft_print_array(char **arr, const char *s, char c)
         ft_putchar('\n');
 }
 
-
 void    ft_lcase(char *s)
 {
         if (*s >= 'A' && *s <= 'Z')

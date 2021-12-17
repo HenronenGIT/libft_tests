@@ -86,7 +86,7 @@ void	test_7()
 	if (list3->content_size == 0)
 	{
 		printf("[OK]\n");
-		printf("|%s|\n", list3->content);
+		printf("|%s|\n",(char *)list3->content);
 	}
 	else
 	{
@@ -110,12 +110,12 @@ void	test_7()
 	list4 = ft_lstnew(s3, ft_strlen((char *)s3) + 1);
 	list5 = ft_lstnew(s4, ft_strlen((char *)s4) + 1);
 	ft_lstadd(&list4, list5);
-	printf("1st NODE:\n%s\n", list4->content);
-	printf("2nd NODE:\n%s\n\n", list4->next->content);
+	printf("1st NODE:\n%s\n", (char *)list4->content);
+	printf("2nd NODE:\n%s\n\n", (char *)list4->next->content);
 	printf("Print whole list:\n");
 	while (list4)
 	{
-        printf("%s\n", list4->content);
+        printf("%s\n", (char *)list4->content);
         list4 = list4->next;
     }
 	printf("\n");
@@ -133,7 +133,7 @@ void	test_7()
 	ss1 = "Hello!";
 	li1 = ft_lstnew(ss1, ft_strlen((char *)ss1 + 1));
 	printf("Node before lstdelone():\n");
-    printf("%s\n", li1->content);
+    printf("%s\n", (char *)li1->content);
 	ft_lstdelone(&li1, del);
 	printf("Node after lstdelone():\n");
 	if (!li1)

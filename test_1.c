@@ -31,7 +31,6 @@ void	test_1()
 	char	str1[] = "";
 	char	str2[] = "Hello world!";
 	size_t	len;
-	size_t	len2;
 
 	printf("%sFT_STRLEN TESTS\n", GREEN);
 	printf(RESET);

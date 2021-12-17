@@ -62,17 +62,17 @@ void	test_2()
 	const char	*s1;
 
 	s1 = "Hello world!";
-	printf("%s\n", memchr(s1, 'e', 5));
-	printf("%s\n\n", ft_memchr(s1, 'e', 5));
+	printf("%s\n", (char *)memchr(s1, 'e', 5));
+	printf("%s\n\n", (char *)ft_memchr(s1, 'e', 5));
 
-	printf("%s\n", memchr(s1, 'e', 0));
-	printf("%s\n\n", ft_memchr(s1, 'e', 0));
+	printf("%s\n", (char *)memchr(s1, 'e', 0));
+	printf("%s\n\n", (char *)ft_memchr(s1, 'e', 0));
 
-	printf("%s\n", memchr(s1, 'b', 10));
-	printf("%s\n\n", ft_memchr(s1, 'b', 10));
+	printf("%s\n", (char *)memchr(s1, 'b', 10));
+	printf("%s\n\n", (char *)ft_memchr(s1, 'b', 10));
 
-	printf("%s\n", memchr(s1, '\0', 10));
-	printf("%s\n", ft_memchr(s1, '\0', 10));
+	printf("%s\n", (char *)memchr(s1, '\0', 10));
+	printf("%s\n", (char *)ft_memchr(s1, '\0', 10));
 
 	/*	ft_strchr	*/
 	printf("%sFT_STRCHR TESTS", GREEN);

@@ -1,1 +1,1 @@
-gcc -Wall -Wextra  -I../libft/ ../libft/libft.a ../libft/*.c ./test_* ./main.c
+gcc -Wall -Wextra  -I../libft/includes ../libft/libft.a ../libft/*.c ./test_* ./main.c

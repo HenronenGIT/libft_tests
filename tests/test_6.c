@@ -49,6 +49,23 @@ size_t  ft_word_count(const char *s, char c)
         return (word_count);
 }
 
+void    ft_print_array(char **arr, const char *s, char c)
+{
+        size_t  i;
+        size_t  word_count;
+
+        word_count = ft_word_count(s, c);
+        i = 0;
+        while (i <= word_count)
+        {
+                ft_putstr(arr[i]);
+                ft_putchar('\n');
+                i++;
+        }
+        ft_putchar('\n');
+}
+
+
 void    ft_lcase(char *s)
 {
         if (*s >= 'A' && *s <= 'Z')

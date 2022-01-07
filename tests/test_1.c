@@ -32,21 +32,21 @@ void	test_1()
 	char	str2[] = "Hello world!";
 	size_t	len;
 
+
 	printf("%sFT_STRLEN TESTS\n", GREEN);
 	printf(RESET);
+	
+	printf("EXPECTED: %zu\n",(len = strlen(str)));
+	printf("RESULT: %zu\n\n",(len = ft_strlen(str)));
 
-	ft_strlen(str) ? strlen(str) : printf("FAIL");
-	printf("Real deal: %zu\n",(len = strlen(str)));
-	printf("FT: %zu\n",(len = ft_strlen(str)));
+	printf("EXPECTED: %zu\n",(len = strlen(str1)));
+	printf("RESULT: %zu\n\n",(len = ft_strlen(str1)));
 
-	printf("Real deal: %zu\n",(len = strlen(str1)));
-	printf("FT: %zu\n",(len = ft_strlen(str1)));
+	printf("EXPECTED: %zu\n",(len = strlen(str2)));
+	printf("RESULT: %zu\n\n",(len = ft_strlen(str2)));
 
-	printf("Real deal: %zu\n",(len = strlen(str2)));
-	printf("FT: %zu\n",(len = ft_strlen(str2)));
-
-	printf("Real deal: %zu\n",(len = strlen(str)));
-	printf("FT: %zu\n",(len = ft_strlen(str)));
+	printf("EXPECTED: %zu\n",(len = strlen(str)));
+	printf("RESULT: %zu\n",(len = ft_strlen(str)));
 
 	/* ft_isalpha tests */
 	printf("%sIS_ALPHA TESTS\n", GREEN);

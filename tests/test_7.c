@@ -56,44 +56,26 @@ void	test_7()
 	/*	lstnew	*/
 	printf("%sFT_LSTNEW TESTS\n", GREEN);
 	printf(RESET);
+	t_list	*list;
+	t_list	*list2;
+	t_list	*list3;
 	/* Normal char test */
 	const char *s1;
-	t_list	*list;
-
 	s1 = "Hello";
 	list = ft_lstnew(s1, ft_strlen((char *)s1));
-	if (ft_strcmp(list->content, s1) == 0 && list->content_size) ///HERE
-		printf("[OK]\n");
-	else
-		printf("[FAIL]");
-
+	printf("String content:\n%s\n",s1); 
+	printf("Node 1 content:\n%s\n\n", list->content);
 	/* Content is null, but still sending content size */
 	const char *s2;
-	t_list	*list2;
-
 	s2 = NULL;
+	printf("String 2 content:\n%s\n", s2);
 	list2 = ft_lstnew(s2, 5);
-	if (!list2->content && list2->content_size == 0)
-		printf("[OK]\n");
-	else
-	{
-		printf("[FAIL]\n");
-		printf("%zu\n", list2->content_size);
-	}
+	printf("Node 2 content_size:\n%zu", list2->content_size);
+	printf("Node 2 content:\n%s\n\n", list2->content);
 	/* Sending content, but size is 0 */
-	t_list	*list3;
+	printf("String content but content_size set to 0:\n|%s|\n",s1); 
 	list3 = ft_lstnew(s1, 0);
-	if (list3->content_size == 0)
-	{
-		printf("[OK]\n");
-		printf("|%s|\n",(char *)list3->content);
-	}
-	else
-	{
-		printf("[FAIL]\n");
-		printf("%zu\n", list3->content_size);
-		printf("|%p|\n", list3->content);
-	}
+	printf("|%s|\n", list3->content);
 	free(list);
 	free(list2);
 	free(list3);
@@ -110,13 +92,14 @@ void	test_7()
 	list4 = ft_lstnew(s3, ft_strlen((char *)s3) + 1);
 	list5 = ft_lstnew(s4, ft_strlen((char *)s4) + 1);
 	ft_lstadd(&list4, list5);
-	printf("1st NODE:\n%s\n", (char *)list4->content);
-	printf("2nd NODE:\n%s\n\n", (char *)list4->next->content);
+	printf("1st NODE:\n%s\n", list4->content);
+	printf("2nd NODE:\n%s\n\n", list4->next->content);
 	printf("Print whole list:\n");
 	while (list4)
 	{
-        printf("%s\n", (char *)list4->content);
+        printf("%s\n", list4->content);
         list4 = list4->next;
+        printf("\n");
     }
 	printf("\n");
 
@@ -133,12 +116,12 @@ void	test_7()
 	ss1 = "Hello!";
 	li1 = ft_lstnew(ss1, ft_strlen((char *)ss1 + 1));
 	printf("Node before lstdelone():\n");
-    printf("%s\n", (char *)li1->content);
+    printf("%s\n", li1->content);
 	ft_lstdelone(&li1, del);
 	printf("Node after lstdelone():\n");
 	if (!li1)
 	{
-		printf("[OK]\n");
+		printf(" [OK] l1 dont exists");
 	}
 	else
 		printf("Something went wrong.");

@@ -31,8 +31,8 @@ void	test_3()
     printf("%sFT_MEMCPY TESTS\n", GREEN);
 	printf(RESET);
 
-	printf("%s\n", (char *)memcpy((void *)0, (void *)0, 5));
-	printf("%s\n\n", (char *)ft_memcpy((void *)0, (void *)0, 5));
+	printf("%s\n", memcpy((void *)0, (void *)0, 5));
+	printf("%s\n\n", ft_memcpy((void *)0, (void *)0, 5));
 
 	//printf("%s\n", memcpy("Hello world", "Hi!", 5));
 	//printf("%s\n", ft_memcpy("Hello world", "Hi!", 5));
@@ -139,14 +139,14 @@ void	test_3()
 
 	src = "012345";
 				
-	printf("%s\n",(char *)memmove(dst1, src, 5));
-	printf("%s\n\n",(char *)ft_memmove(dst2, src, 5));
+	printf("%s\n",memmove(dst1, src, 5));
+	printf("%s\n\n",ft_memmove(dst2, src, 5));
 
-	printf("%s\n",(char *)memmove(dst3, src, 0));
-	printf("%s\n\n",(char *)ft_memmove(dst4, src, 0));
+	printf("%s\n",memmove(dst3, src, 0));
+	printf("%s\n\n",ft_memmove(dst4, src, 0));
 
-	printf("%s\n",(char *)memmove(dst4, src, 5));
-	printf("%s\n\n",(char *)ft_memmove(dst5, src, 5));
+	printf("%s\n",memmove(dst4, src, 5));
+	printf("%s\n\n",ft_memmove(dst5, src, 5));
 
 	//Same dst and src
 	memmove(&dst6[5], &dst6[3], 5);
@@ -154,8 +154,8 @@ void	test_3()
 	ft_memmove(&dst7[5], &dst7[3], 5);
 	printf("|%s|\n\n", dst7);
 
-	printf("%s\n",(char *)memmove(((void *)0), ((void *)0), 5));
-	printf("%s\n\n",(char *)ft_memmove(((void *)0), ((void *)0), 5));
+	printf("%s\n",memmove(((void *)0), ((void *)0), 5));
+	printf("%s\n\n",ft_memmove(((void *)0), ((void *)0), 5));
 
 	/*	ft_memcmp	*/
 	printf("%sFT_MEMCMP TESTS\n", GREEN);

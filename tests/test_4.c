@@ -139,14 +139,14 @@ void	test_4()
 
 	src3 = "zyxwvutsrqponmlkjihgfedcba";
 
-	printf("%s\n",(char *)memccpy(d1, src3, 'r', 20));
-	printf("%s\n\n",(char *)ft_memccpy(d2, src3, 'r', 20));
+	printf("%s\n",memccpy(d1, src3, 'r', 20));
+	printf("%s\n\n",ft_memccpy(d2, src3, 'r', 20));
 
-	printf("%s\n", (char *)memccpy(d3, src3, 'r', 2));
-	printf("%s\n\n", (char *)ft_memccpy(d4, src3, 'r', 2));
+	printf("%s\n", memccpy(d3, src3, 'r', 2));
+	printf("%s\n\n", ft_memccpy(d4, src3, 'r', 2));
 
-	printf("%s\n",(char *)memccpy(d5, src3, 'r', 0));
-	printf("%s\n\n",(char *)ft_memccpy(d6, src3, 'r', 0));
+	printf("%s\n",memccpy(d5, src3, 'r', 0));
+	printf("%s\n\n",ft_memccpy(d6, src3, 'r', 0));
 
 	/*	strnstr	*/
 	printf("%sFT_STRNSTR TESTS\n", GREEN);

@@ -1,6 +1,6 @@
 # libft_tests
-These are own made tests for libft project.
+These are my own made tests for libft project.
 
 Quick start:
-1.  Run bash script_test.sh
-2.  Running different sections: ./a.out [1-7]
+1.  Run "bash compile_tests.sh"
+2.  Running different sections: ./libft [1-7]
